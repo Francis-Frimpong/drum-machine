@@ -82,3 +82,25 @@
     font-weight: 600;
     padding-right: 1.3em;
   }
+
+  .sounds{
+    border: 2px solid black;
+    width: 700px;
+    height: 550px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3); /* 3 rows, each 150px tall */
+    row-gap: 10px;
+    column-gap: 5px;
+    justify-items: center;
+    align-items: center;
+    padding: 1em 0 1em 0;
+    margin-top: 2em;
+  }
+
+  .sounds div{
+    width: 160px;
+    height: 160px;
+    border: 1px solid black;
+  }
