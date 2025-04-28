@@ -17,7 +17,7 @@ const beatFile = [
 sounds.addEventListener('click', (e) => {
     if(e.target.classList.contains('beat')){
         beat.forEach((drumBeat, index) => {
-            drumBeat = new Audio(beatFile[index])
+            drumBeat = new Audio(`${beatFile[index]}`)
             drumBeat.play();
         });
     }
