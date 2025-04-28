@@ -1,0 +1,84 @@
+.custom-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    cursor: pointer;
+  }
+  
+  /* Hide default checkbox */
+  .custom-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The background (track) */
+  .custom-toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 28px;
+    transition: background-color 0.3s;
+  }
+  
+  /* The circle (thumb) */
+  .custom-toggle .slider::before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  /* When checked, move the thumb and change background */
+  .custom-toggle input:checked + .slider {
+    background-color: #4CAF50;
+  }
+  
+  .custom-toggle input:checked + .slider::before {
+    transform: translateX(22px);
+  }
+
+  .controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid black;
+    width: 700px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .power{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .volume{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-display{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    padding: 1em;
+  }
+
+  .info-display i{
+    font-size: 2.5em;
+    font-weight: 600;
+    padding-right: 1.3em;
+  }

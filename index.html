@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Drum Machine</title>
 </head>
 <body>
     
+    
+    
+    <div class="controls">
+        <div class="power">
+            <h3>Power</h3>
+            <label class="custom-toggle">
+                <input type="checkbox" />
+                <span class="slider"></span>
+            </label>
+            
+        </div>
+        <div class="volume">
+            <h3>volume</h3>
+            <input type="range" name="volume" id="volume">
+        </div>
+        <div class="info-display">
+            <i class="fa-solid fa-headphones-simple"></i>
+            <h3>Sound Name</h3>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
