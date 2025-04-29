@@ -16,24 +16,13 @@ const beatFile = [
 
 sounds.addEventListener('click', (e) => {
     if(e.target.classList.contains('beat')){
-        beat.forEach((drumBeat, index) => {
-            drumBeat = new Audio(`${beatFile[index]}`)
-            drumBeat.play();
-        });
+      beat.forEach((beats, index) => {
+        if(e.target === beats){      
+          let sounds = beatFile[index];
+          let audio = new Audio(sounds);
+          audio.play();
+        }
+      })
+    
     }
 })
-
-
-
-
-
-
-
-
-
-// const listA = [1,2,3]
-// const listB = ['A','B','C']
-// listB.forEach((letter, index) => {
-//     console.log(`${letter}:${listA[index]}`);
-
-// })
