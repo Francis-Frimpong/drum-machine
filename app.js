@@ -13,6 +13,10 @@ const beatFile = [
     "beats/tr808-clap-241405.mp3"
 ]
 
+function DrumSwitch() {
+
+}
+
 
 sounds.addEventListener('click', (e) => {
     if(e.target.classList.contains('beat')){
