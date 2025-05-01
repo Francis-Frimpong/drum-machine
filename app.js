@@ -1,5 +1,10 @@
 const beat = document.querySelectorAll('.beat');
 const sounds = document.querySelector('.sounds');
+const customSwitch =  document.querySelector('.customSwitch');
+
+beat.forEach((sound) => {
+  sound.classList.add('disabled');
+})
 
 const beatFile = [
     "beats/085459_8039s-power-snare-44664.mp3",
@@ -17,6 +22,17 @@ function DrumSwitch() {
 
 }
 
+
+
+
+customSwitch.addEventListener('change', () => {
+
+  if(customSwitch.checked === true){
+    console.log('checked!');
+  }else {
+    console.log('not checked');
+  }
+})
 
 sounds.addEventListener('click', (e) => {
     if(e.target.classList.contains('beat')){

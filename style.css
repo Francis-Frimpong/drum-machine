@@ -104,3 +104,9 @@
     height: 160px;
     border: 1px solid black;
   }
+
+  .disabled {
+    /* opacity: 0.5; */
+    pointer-events: none;
+    cursor: not-allowed;
+}
