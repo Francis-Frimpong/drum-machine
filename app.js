@@ -1,6 +1,8 @@
 const beat = document.querySelectorAll('.beat');
 const sounds = document.querySelector('.sounds');
 const customSwitch =  document.querySelector('.customSwitch');
+const volume = document.querySelector('#volume')
+
 
 
 const beatFile = [
@@ -15,7 +17,7 @@ const beatFile = [
   "beats/tr808-clap-241405.mp3"
 ]
 
-
+//Drum switch function
 function drumSwitch() {
   
   beat.forEach((sound) => {
@@ -29,11 +31,21 @@ function drumSwitch() {
 }
 
 
+function drumVolume(){
+  beat.forEach((beats, index) => {
+    let sounds = beatFile[index];
+    let audio = new Audio(sounds);
+    console.log(audio.volume = volume.value);
+  })
+}
 
+drumVolume()
 
 
 // EventListener for drum switch
 customSwitch.addEventListener('change', drumSwitch)
+
+volume.addEventListener('volumeChange', drumVolume)
 
 // EventListener for sound when clicked
 sounds.addEventListener('click', (e) => {
