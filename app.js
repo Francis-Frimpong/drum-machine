@@ -16,27 +16,26 @@ const beatFile = [
 ]
 
 
-function DrumSwitch() {
+function drumSwitch() {
   
+  beat.forEach((sound) => {
+    sound.classList.add('disabled');
+    if(customSwitch.checked === true){
+      sound.classList.remove('disabled');
+    }else {
+      sound.classList.add('disabled');
+    }
+  });
 }
 
 
 
 
 
-beat.forEach((sound) => {
-  sound.classList.add('disabled');
-});
+// EventListener for drum switch
+customSwitch.addEventListener('change', drumSwitch)
 
-customSwitch.addEventListener('change', () => {
-
-  if(customSwitch.checked === true){
-    
-  }else {
-    
-  }
-})
-
+// EventListener for sound when clicked
 sounds.addEventListener('click', (e) => {
     if(e.target.classList.contains('beat')){
       beat.forEach((beats, index) => {
