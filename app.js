@@ -16,12 +16,15 @@ const beatFile = [
   "beats/tr707-crash-cymbal-241376.mp3",
   "beats/tr808-clap-241405.mp3"
 ]
+//looping through the beat container and assigning the class of 'disabled' to each
+for(bt of beat){
+  bt.classList.add('disabled');  
+}
 
 //Drum switch function
 function drumSwitch() {
   
   beat.forEach((sound) => {
-    sound.classList.add('disabled');
     if(customSwitch.checked === true){
       sound.classList.remove('disabled');
     }else {
@@ -39,13 +42,13 @@ function drumVolume(){
   })
 }
 
-drumVolume()
+// drumVolume()
 
 
 // EventListener for drum switch
 customSwitch.addEventListener('change', drumSwitch)
 
-volume.addEventListener('volumeChange', drumVolume)
+volume.addEventListener('volumeChange', drumVolume);
 
 // EventListener for sound when clicked
 sounds.addEventListener('click', (e) => {
@@ -60,3 +63,7 @@ sounds.addEventListener('click', (e) => {
     
     }
 })
+
+
+
+
