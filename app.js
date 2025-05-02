@@ -38,7 +38,8 @@ function drumVolume(){
   beat.forEach((beats, index) => {
     let sounds = beatFile[index];
     let audio = new Audio(sounds);
-    console.log(audio.volume = volume.value);
+    audio.volume = volume.value / 100;
+    
   })
 }
 
@@ -48,7 +49,7 @@ function drumVolume(){
 // EventListener for drum switch
 customSwitch.addEventListener('change', drumSwitch)
 
-volume.addEventListener('volumeChange', drumVolume);
+volume.addEventListener('change', drumVolume);
 
 // EventListener for sound when clicked
 sounds.addEventListener('click', (e) => {
@@ -57,6 +58,7 @@ sounds.addEventListener('click', (e) => {
         if(e.target === beats){      
           let sounds = beatFile[index];
           let audio = new Audio(sounds);
+          audio.volume = volume.value / 100;
           audio.play();
         }
       })
