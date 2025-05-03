@@ -4,7 +4,7 @@ const customSwitch =  document.querySelector('.customSwitch');
 const volume = document.querySelector('#volume')
 
 
-
+// List of  drum beat audio
 const beatFile = [
   "beats/085459_8039s-power-snare-44664.mp3",
   "beats/hi-hat-6-231041.mp3",
@@ -16,6 +16,8 @@ const beatFile = [
   "beats/tr707-crash-cymbal-241376.mp3",
   "beats/tr808-clap-241405.mp3"
 ]
+
+
 //looping through the beat container and assigning the class of 'disabled' to each
 for(bt of beat){
   bt.classList.add('disabled');  
@@ -33,9 +35,9 @@ function drumSwitch() {
   });
 }
 
-
+//Drum volume function
 function drumVolume(){
-  beat.forEach((beats, index) => {
+  beat.forEach((index) => {
     let sounds = beatFile[index];
     let audio = new Audio(sounds);
     audio.volume = volume.value / 100;
@@ -43,12 +45,11 @@ function drumVolume(){
   })
 }
 
-// drumVolume()
-
 
 // EventListener for drum switch
 customSwitch.addEventListener('change', drumSwitch)
 
+// EventListener for drum volume
 volume.addEventListener('change', drumVolume);
 
 // EventListener for sound when clicked
@@ -57,6 +58,7 @@ sounds.addEventListener('click', (e) => {
       beat.forEach((beats, index) => {
         if(e.target === beats){      
           let sounds = beatFile[index];
+          console.log(sounds);
           let audio = new Audio(sounds);
           audio.volume = volume.value / 100;
           audio.play();
