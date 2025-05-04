@@ -18,6 +18,18 @@ const beatFile = [
   "beats/tr808-clap-241405.mp3"
 ]
 
+const nameOfBeats = [
+  "snare",
+  "hi-hat",
+  "kick",
+  "bass",
+  "tom",
+  "snap",
+  "rimshot",
+  "cymbal",
+  "clap"
+];
+
 
 //looping through the beat container and assigning the class of 'disabled' to each
 for(bt of beat){
@@ -52,7 +64,8 @@ function playDrum(e){
     beat.forEach((beats, index) => {
       if(e.target === beats){      
         let sounds = beatFile[index];
-        console.log(sounds);
+        let beatName = nameOfBeats[index]
+        soundName.textContent = beatName;
         let audio = new Audio(sounds);
         audio.volume = volume.value / 100;
         audio.play();
