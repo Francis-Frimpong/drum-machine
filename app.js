@@ -46,6 +46,22 @@ function drumVolume(){
   })
 }
 
+// Play drum function
+function playDrum(e){
+  if(e.target.classList.contains('beat')){
+    beat.forEach((beats, index) => {
+      if(e.target === beats){      
+        let sounds = beatFile[index];
+        console.log(sounds);
+        let audio = new Audio(sounds);
+        audio.volume = volume.value / 100;
+        audio.play();
+      }
+    })
+  
+  }
+}
+
 
 // EventListener for drum switch
 customSwitch.addEventListener('change', drumSwitch)
@@ -53,21 +69,8 @@ customSwitch.addEventListener('change', drumSwitch)
 // EventListener for drum volume
 volume.addEventListener('change', drumVolume);
 
-// EventListener for sound when clicked
-sounds.addEventListener('click', (e) => {
-    if(e.target.classList.contains('beat')){
-      beat.forEach((beats, index) => {
-        if(e.target === beats){      
-          let sounds = beatFile[index];
-          console.log(sounds);
-          let audio = new Audio(sounds);
-          audio.volume = volume.value / 100;
-          audio.play();
-        }
-      })
-    
-    }
-})
+// EventListener to play sound when clicked
+sounds.addEventListener('click', playDrum);
 
 
 
