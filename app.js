@@ -2,6 +2,7 @@ const beat = document.querySelectorAll('.beat');
 const sounds = document.querySelector('.sounds');
 const customSwitch =  document.querySelector('.customSwitch');
 const volume = document.querySelector('#volume')
+const soundName = document.querySelector('.soundName');
 
 
 // List of  drum beat audio
